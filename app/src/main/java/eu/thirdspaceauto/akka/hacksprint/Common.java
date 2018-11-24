@@ -31,19 +31,4 @@ public class Common extends Application {
         PreferencesManager.initialize(this);
         MultiDex.install(this);
     }
-
-    public static String getContactName(Context context, String phoneNumber) {
-        Cursor cursor = context.getContentResolver().query(Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber)), new String[]{"display_name"}, null, null, null);
-        if (cursor == null) {
-            return null;
-        }
-        String contactName = null;
-        if (cursor.moveToFirst()) {
-            contactName = cursor.getString(cursor.getColumnIndex("display_name"));
-        }
-        if (!(cursor == null || cursor.isClosed())) {
-            cursor.close();
-        }
-        return contactName;
-    }
 }

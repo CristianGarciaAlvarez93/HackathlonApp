@@ -21,9 +21,13 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".Login.SignUpActivity" />
+        <activity android:name=".Drawer.ModelActivity" />
+        <activity android:name=".Drawer.CreateModelActivity" />
+
+		<activity android:name=".MainActivity"/>
 
 
-		<service android:name=".FirebaseServices.DataHungryFireBaseMsgService">
+        <service android:name=".FirebaseServices.DataHungryFireBaseMsgService">
 			<intent-filter>
 				<action android:name="com.google.firebase.MESSAGING_EVENT" />
 			</intent-filter>
