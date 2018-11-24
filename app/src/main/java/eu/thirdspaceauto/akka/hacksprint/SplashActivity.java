@@ -19,10 +19,13 @@ import eu.thirdspaceauto.akka.hacksprint.Utils.Utility;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_CALENDAR;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.READ_SMS;
 import static android.Manifest.permission.RECEIVE_SMS;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -56,7 +59,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.startActivity(loginIntent);
                     SplashActivity.this.finish();
                 }else{
-                    SplashActivity.this.startActivity(modelActivityIntent);
+                    SplashActivity.this.startActivity(mainActivityIntent);
                     SplashActivity.this.finish();
                 }
             }
@@ -69,41 +72,28 @@ public class SplashActivity extends AppCompatActivity {
             countDownTimer.start();
         } else {
             //Calling method to enable permission.
-            requestMultiplePermission();
+            checkPermissionIsEnabledOrNot();
 
         }
     }
 
 
-    private void requestMultiplePermission() {
-        // Creating String Array with Permissions.
-        ActivityCompat.requestPermissions(SplashActivity.this, new String[]{
-                READ_PHONE_STATE,
-                ACCESS_FINE_LOCATION,
-                ACCESS_COARSE_LOCATION,
-                READ_SMS,
-                RECEIVE_SMS,
-                READ_CALENDAR,
-        }, RequestPermissionCode);
-
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case RequestPermissionCode:
-                LogUtils.printLog(TAG," --- permission granted result ---");
+                LogUtils.printLog(TAG, " --- permission granted result ---");
                 if (grantResults.length > 0) {
-                    boolean readPhoneState = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean accessFineLocation = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    boolean read_sms = grantResults[2] == PackageManager.PERMISSION_GRANTED;
-                    boolean receive_sms = grantResults[3] == PackageManager.PERMISSION_GRANTED;
-                    boolean readCalendar = grantResults[4] == PackageManager.PERMISSION_GRANTED;
-                    if (readPhoneState && accessFineLocation && read_sms
-                            && receive_sms && readCalendar) {
-                        LogUtils.printLog(TAG,"Permission Granted");
+
+                    boolean readExternalStorage = grantResults[4] == PackageManager.PERMISSION_GRANTED;
+                    boolean writeExternalStorage = grantResults[5] == PackageManager.PERMISSION_GRANTED;
+                    boolean cameraPermission = grantResults[6] == PackageManager.PERMISSION_GRANTED;
+                    if (readExternalStorage &&
+                            writeExternalStorage && cameraPermission) {
+                        LogUtils.printLog(TAG, "Permission Granted");
                     } else {
-                        LogUtils.printLog(TAG,"Permission Denied");
+                        LogUtils.printLog(TAG, "Permission Denied");
                     }
                 }
                 countDownTimer.start();
@@ -112,21 +102,16 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public boolean checkPermissionIsEnabledOrNot() {
-        int firstPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
-        int secondPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
-        int thirdPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(),READ_SMS);
-        int fourthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(),RECEIVE_SMS);
-        int fifthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_CALENDAR);
 
+        int fifthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        int sixthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int seventhtPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
         return
-                firstPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                        secondPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                        thirdPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                        fourthPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                        fifthPermissionResult == PackageManager.PERMISSION_GRANTED
+                fifthPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                        sixthPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                        seventhtPermissionResult == PackageManager.PERMISSION_GRANTED
                 ;
     }
-
 
 
 }

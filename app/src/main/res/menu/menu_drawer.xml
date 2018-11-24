@@ -9,6 +9,17 @@
     </group>
     <group>
         <item
+            android:id="@+id/my_excavators"
+            android:title="My Excavators" />
+
+        <item
+            android:id="@+id/old_inspection"
+            android:title="My Inspections" />
+
+        <item
+            android:id="@+id/account"
+            android:title="Account" />
+        <item
             android:id="@+id/logout"
             android:title="Logout" />
     </group>

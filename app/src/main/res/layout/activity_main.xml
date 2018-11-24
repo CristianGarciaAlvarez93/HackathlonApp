@@ -54,6 +54,12 @@
                         android:gravity="center"
                         android:text="@string/thank_you_text" />
                 </FrameLayout>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    />
+
             </RelativeLayout>
 
         </RelativeLayout>

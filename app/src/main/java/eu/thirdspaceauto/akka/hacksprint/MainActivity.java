@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +23,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.SettingsClient;
 
+import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
 import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
@@ -33,28 +36,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Context context;
     private Activity activity;
     private MarshMallowPermission marshMallowPermission;
-    private boolean isGyroAvailable = true;
-    public static final int GET_LOCATION_PERMISSION_REQUEST_CODE = 11;
-    private SettingsClient mSettingsClient;
-    private LocationRequest mLocationRequest;
-    private LocationSettingsRequest mLocationSettingsRequest;
-    private static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
-    private static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = UPDATE_INTERVAL_IN_MILLISECONDS / 2;
     private NavigationView navigationView;
     private Toolbar toolbar;
     private TextView header_userEmail;
     private View headerLayout;
     private DrawerLayout drawerLayout;
-
+    private ViewPager viewPager;
+    InspectionPagerAdapter inspectionPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        initSMSData();
-        initCalendarData();
-        initSensorDataService();
-        startAlarmManager();
 
     }
 
@@ -85,23 +78,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(!userEmail.equalsIgnoreCase("")){
             header_userEmail.setText("Welcome "+ userEmail);
         }
-    }
 
-    private void initCalendarData() {
-
-    }
-
-    private void initSMSData() {
-
-    }
-
-    private void initSensorDataService() {
-
-
-    }
-
-    private void startAlarmManager() {
-
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 3);
+        viewPager.setAdapter(inspectionPagerAdapter);
+        viewPager.setCurrentItem(0);
     }
 
     @Override
@@ -112,13 +93,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.logout:
                 logout();
                 break;
+            case R.id.my_excavators:
+                break;
+            case R.id.old_inspection:
+                break;
+            case R.id.account:
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
     private void logout() {
-        //remove all preferences
         Utility.saveJwtToken("");
         PreferencesManager.putString("isUserLoggedIn", "");
         PreferencesManager.putString(StringConstants.KEY_USER_EMAIL, "");
