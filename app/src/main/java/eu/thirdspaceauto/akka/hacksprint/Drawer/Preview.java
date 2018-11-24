@@ -1,116 +1,194 @@
 package eu.thirdspaceauto.akka.hacksprint.Drawer;
 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.PointF;
 import android.hardware.Camera;
-import android.media.MediaScannerConnection;
+import android.hardware.Camera.PictureCallback;
+import android.hardware.Camera.ShutterCallback;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Display;
-import android.view.KeyEvent;
-import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Calendar;
-
 import eu.thirdspaceauto.akka.hacksprint.R;
+import eu.thirdspaceauto.akka.hacksprint.Utils.CameraPreview;
 
-public class Preview extends AppCompatActivity {
-    private SurfaceView cameraPreview;
-    private RelativeLayout overlay;
+public class Preview extends Activity {
+    private static final String TAG = "PreviewActivity";
+    CameraPreview preview;
+    Button buttonClick;
     Camera camera;
-    private int IMAGE_SIZE=400;
+    Activity act;
+    Context ctx;
+    String component_str= "";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Optional: Hide the status bar at the top of the window
+        ctx = this;
+        act = this;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        // Set the content view and get references to our views
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        component_str = getIntent().getStringExtra("component");
         setContentView(R.layout.preview);
-        cameraPreview = (SurfaceView) findViewById(R.id.camera_preview);
-        overlay = (RelativeLayout) findViewById(R.id.overlay);
 
-        camera = Camera.open(Camera.CameraInfo.CAMERA_FACING_BACK);
-        Camera.Parameters camParams = camera.getParameters();
+        preview = new CameraPreview(this, (SurfaceView) findViewById(R.id.surfaceView));
+        preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ((FrameLayout) findViewById(R.id.layout)).addView(preview);
+        preview.setKeepScreenOn(true);
 
+        preview.setOnClickListener(new View.OnClickListener() {
 
-        Camera.Size previewSize = camParams.getSupportedPreviewSizes().get(0);
-        for (Camera.Size size : camParams.getSupportedPreviewSizes()) {
-            if (size.width >= IMAGE_SIZE && size.height >= IMAGE_SIZE) {
-                previewSize = size;
-                break;
+            @Override
+            public void onClick(View arg0) {
+                camera.takePicture(shutterCallback, rawCallback, jpegCallback);
             }
-        }
-        camParams.setPreviewSize(previewSize.width, previewSize.height);
+        });
 
 
-        Camera.Size pictureSize = camParams.getSupportedPictureSizes().get(0);
-        for (Camera.Size size : camParams.getSupportedPictureSizes()) {
-            if (size.width == previewSize.width && size.height == previewSize.height) {
-                pictureSize = size;
-                break;
+        buttonClick = (Button) findViewById(R.id.btnCapture);
+        buttonClick.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                camera.takePicture(shutterCallback, rawCallback, jpegCallback);
             }
-        }
-        camParams.setPictureSize(pictureSize.width, pictureSize.height);
+        });
     }
 
     @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-
-        // Get the preview size
-        int previewWidth = cameraPreview.getMeasuredWidth(),
-                previewHeight = cameraPreview.getMeasuredHeight();
-
-        // Set the height of the overlay so that it makes the preview a square
-        RelativeLayout.LayoutParams overlayParams = (RelativeLayout.LayoutParams) overlay.getLayoutParams();
-        overlayParams.height = previewHeight - previewWidth;
-        overlay.setLayoutParams(overlayParams);
+    protected void onResume() {
+        super.onResume();
+        int numCams = Camera.getNumberOfCameras();
+        if (numCams > 0) {
+            try {
+                camera = Camera.open(0);
+                camera.startPreview();
+                preview.setCamera(camera);
+            } catch (RuntimeException ex) {
+                Toast.makeText(ctx, "Camera not found", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
-    private Bitmap processImage(byte[] data) throws IOException {
-        // Determine the width/height of the image
-        int width = camera.getParameters().getPictureSize().width;
-        int height = camera.getParameters().getPictureSize().height;
+    @Override
+    protected void onPause() {
+        if (camera != null) {
+            camera.stopPreview();
+            preview.setCamera(null);
+            camera.release();
+            camera = null;
+        }
+        super.onPause();
+    }
 
-        // Load the bitmap from the byte array
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
+    private void resetCam() {
+        camera.startPreview();
+        preview.setCamera(camera);
+    }
 
-        // Rotate and crop the image into a square
-        int croppedWidth = (width > height) ? height : width;
-        int croppedHeight = (width > height) ? height : width;
+    private void refreshGallery(File file) {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        mediaScanIntent.setData(Uri.fromFile(file));
+        sendBroadcast(mediaScanIntent);
+    }
 
-        Matrix matrix = new Matrix();
-        matrix.postRotate(90);
-        Bitmap cropped = Bitmap.createBitmap(bitmap, 0, 0, croppedWidth, croppedHeight, matrix, true);
-        bitmap.recycle();
+    ShutterCallback shutterCallback = new ShutterCallback() {
+        public void onShutter() {
+        }
+    };
 
-        // Scale down to the output size
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(cropped, IMAGE_SIZE, IMAGE_SIZE, true);
-        cropped.recycle();
+    PictureCallback rawCallback = new PictureCallback() {
+        public void onPictureTaken(byte[] data, Camera camera) {
+            Toast.makeText(getApplicationContext(),"Picture taken",Toast.LENGTH_SHORT).show();
+        }
+    };
 
-        return scaledBitmap;
+    PictureCallback jpegCallback = new PictureCallback() {
+        public void onPictureTaken(byte[] data, Camera camera) {
+            new SaveImageTask().execute(data);
+        }
+    };
+
+    private class SaveImageTask extends AsyncTask<byte[], String, String> {
+
+        @Override
+        protected String doInBackground(byte[]... data) {
+            FileOutputStream outStream = null;
+            String path = "";
+            // Write to SD Card
+            try {
+
+                Bitmap realImage = BitmapFactory.decodeByteArray(data[0], 0, data.length);
+//                realImage = rotate(realImage, 270);
+
+                File sdCard = Environment.getExternalStorageDirectory();
+                File dir = new File(sdCard.getAbsolutePath() + "/volvo");
+                dir.mkdirs();
+
+                String fileName = String.format("%d.jpg", System.currentTimeMillis());
+                File outFile = new File(dir, fileName);
+
+                outStream = new FileOutputStream(outFile);
+//                realImage.compress(Bitmap.CompressFormat.JPEG,90,outStream);
+                outStream.write(data[0]);
+                outStream.flush();
+                outStream.close();
+
+                Log.d(TAG, "onPictureTaken - wrote bytes: " + data.length + " to " + outFile.getAbsolutePath());
+                path = outFile.getAbsolutePath();
+                refreshGallery(outFile);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+            }
+            return path;
+        }
+
+        @Override
+        protected void onPostExecute(String path) {
+            super.onPostExecute(path);
+            Log.d(TAG,"onPost path= "+path);
+            resetCam();
+            Intent intent = new Intent();
+            intent.putExtra("path",path);
+            intent.putExtra("component",component_str);
+            setResult(100,intent);
+            act.finish();
+        }
+    }
+
+    public static Bitmap rotate(Bitmap bitmap, int degree) {
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+
+        Matrix mtx = new Matrix();
+        //       mtx.postRotate(degree);
+        mtx.setRotate(degree);
+
+        return Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, true);
     }
 }
+
