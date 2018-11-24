@@ -11,8 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9136cb17-a26b-4ff3-a55f-3436577a1001" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/BottomRollerFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/DoubleGrouserShoeFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/InfoSheetFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/ShoeGrouserHeightFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/volvo_logo_scaled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_bottom_roller.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_double_grouser_shoe.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_info_sheet.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_shoe_grouser_height.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/SplashActivity.java" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/SplashActivity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_model.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_model.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_track_link.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_track_link.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,14 +50,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FinalActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinalActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/FinalActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="54" column="27" lean-forward="true" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+            <state relative-caret-position="180">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrackLinkFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-296">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InspectionPagerAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <element signature="e#1949#2093#0" expanded="true" />
-                <element signature="e#2092#2093#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2391,18 +2435,18 @@
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Utils/CameraPreview.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/preview.xml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Drawer/Preview.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/IdlerFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TopRollerFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/SprocketFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_idler.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_top_roller.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_sprocket.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_finish.xml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/FinalActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java" />
       </list>
     </option>
   </component>
@@ -2920,10 +2964,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#1372#1390#0" expanded="false" />
-            <element signature="e#1416#1434#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3011,18 +3052,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="136" column="61" lean-forward="false" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="61" />
-          <folding>
-            <element signature="e#910#930#0" expanded="false" />
-            <element signature="e#1333#1373#0" expanded="false" />
-            <element signature="e#1691#1709#0" expanded="false" />
-            <element signature="e#2249#2269#0" expanded="false" />
-            <element signature="e#2628#2645#0" expanded="false" />
-            <element signature="e#2789#2809#0" expanded="false" />
-            <element signature="e#3168#3185#0" expanded="false" />
-            <element signature="e#3337#3357#0" expanded="false" />
-            <element signature="e#3550#3568#0" expanded="false" />
-            <element signature="e#5525#5543#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3156,22 +3186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="109" column="62" lean-forward="false" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="66" column="61" lean-forward="false" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Drawer/Preview.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -3184,14 +3198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_top_roller.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3200,23 +3206,23 @@
         <state relative-caret-position="214">
           <caret line="22" column="0" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#671#688#0" expanded="true" />
-            <element signature="e#717#734#0" expanded="true" />
-            <element signature="e#860#880#0" expanded="true" />
-            <element signature="e#1250#1267#0" expanded="true" />
-            <element signature="e#1307#1324#0" expanded="true" />
-            <element signature="e#1398#1438#0" expanded="true" />
-            <element signature="e#1758#1776#0" expanded="true" />
-            <element signature="e#2045#2062#0" expanded="true" />
-            <element signature="e#2246#2266#0" expanded="true" />
-            <element signature="e#2575#2592#0" expanded="true" />
-            <element signature="e#2632#2649#0" expanded="true" />
-            <element signature="e#2793#2813#0" expanded="true" />
-            <element signature="e#3122#3139#0" expanded="true" />
-            <element signature="e#3179#3196#0" expanded="true" />
-            <element signature="e#3348#3368#0" expanded="true" />
-            <element signature="e#3568#3586#0" expanded="true" />
-            <element signature="e#5538#5556#0" expanded="true" />
+            <element signature="e#671#688#0" expanded="false" />
+            <element signature="e#717#734#0" expanded="false" />
+            <element signature="e#860#880#0" expanded="false" />
+            <element signature="e#1250#1267#0" expanded="false" />
+            <element signature="e#1307#1324#0" expanded="false" />
+            <element signature="e#1398#1438#0" expanded="false" />
+            <element signature="e#1758#1776#0" expanded="false" />
+            <element signature="e#2045#2062#0" expanded="false" />
+            <element signature="e#2246#2266#0" expanded="false" />
+            <element signature="e#2575#2592#0" expanded="false" />
+            <element signature="e#2632#2649#0" expanded="false" />
+            <element signature="e#2793#2813#0" expanded="false" />
+            <element signature="e#3122#3139#0" expanded="false" />
+            <element signature="e#3179#3196#0" expanded="false" />
+            <element signature="e#3348#3368#0" expanded="false" />
+            <element signature="e#3568#3586#0" expanded="false" />
+            <element signature="e#5538#5556#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3229,8 +3235,8 @@
         <state relative-caret-position="152">
           <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
           <folding>
-            <element signature="e#1296#1313#0" expanded="true" />
-            <element signature="e#1353#1370#0" expanded="true" />
+            <element signature="e#1296#1313#0" expanded="false" />
+            <element signature="e#1353#1370#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3243,23 +3249,23 @@
         <state relative-caret-position="585">
           <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding>
-            <element signature="e#666#683#0" expanded="true" />
-            <element signature="e#712#729#0" expanded="true" />
-            <element signature="e#854#874#0" expanded="true" />
-            <element signature="e#1279#1319#0" expanded="true" />
-            <element signature="e#1403#1420#0" expanded="true" />
-            <element signature="e#1460#1477#0" expanded="true" />
-            <element signature="e#1752#1770#0" expanded="true" />
-            <element signature="e#2042#2059#0" expanded="true" />
-            <element signature="e#2241#2261#0" expanded="true" />
-            <element signature="e#2570#2587#0" expanded="true" />
-            <element signature="e#2627#2644#0" expanded="true" />
-            <element signature="e#2788#2808#0" expanded="true" />
-            <element signature="e#3117#3134#0" expanded="true" />
-            <element signature="e#3174#3191#0" expanded="true" />
-            <element signature="e#3343#3363#0" expanded="true" />
-            <element signature="e#3565#3583#0" expanded="true" />
-            <element signature="e#5547#5565#0" expanded="true" />
+            <element signature="e#666#683#0" expanded="false" />
+            <element signature="e#712#729#0" expanded="false" />
+            <element signature="e#854#874#0" expanded="false" />
+            <element signature="e#1279#1319#0" expanded="false" />
+            <element signature="e#1403#1420#0" expanded="false" />
+            <element signature="e#1460#1477#0" expanded="false" />
+            <element signature="e#1752#1770#0" expanded="false" />
+            <element signature="e#2042#2059#0" expanded="false" />
+            <element signature="e#2241#2261#0" expanded="false" />
+            <element signature="e#2570#2587#0" expanded="false" />
+            <element signature="e#2627#2644#0" expanded="false" />
+            <element signature="e#2788#2808#0" expanded="false" />
+            <element signature="e#3117#3134#0" expanded="false" />
+            <element signature="e#3174#3191#0" expanded="false" />
+            <element signature="e#3343#3363#0" expanded="false" />
+            <element signature="e#3565#3583#0" expanded="false" />
+            <element signature="e#5547#5565#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3295,12 +3301,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/FinalActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="54" column="27" lean-forward="true" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        <state relative-caret-position="180">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TrackLinkFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#1949#2093#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

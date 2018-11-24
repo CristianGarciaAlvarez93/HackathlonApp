@@ -8,7 +8,7 @@
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
 		android:orientation="vertical">
 		<TextView
 			android:id="@+id/model_text"

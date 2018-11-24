@@ -18,11 +18,12 @@
             android:layout_marginLeft="@dimen/margin_8"
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
-            android:text="Track Link Insepection: "
+            android:text="Track Link Inspection: "
             android:textColor="@color/white"
             android:textSize="@dimen/text_size16" />
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <android.support.v7.widget.CardView
+			xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_subject_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

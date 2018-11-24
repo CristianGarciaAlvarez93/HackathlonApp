@@ -59,7 +59,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.startActivity(loginIntent);
                     SplashActivity.this.finish();
                 }else{
-                    SplashActivity.this.startActivity(mainActivityIntent);
+                    SplashActivity.this.startActivity(modelActivityIntent);
                     SplashActivity.this.finish();
                 }
             }
@@ -73,11 +73,8 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             //Calling method to enable permission.
             checkPermissionIsEnabledOrNot();
-
         }
     }
-
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
@@ -112,6 +109,4 @@ public class SplashActivity extends AppCompatActivity {
                         seventhtPermissionResult == PackageManager.PERMISSION_GRANTED
                 ;
     }
-
-
 }
