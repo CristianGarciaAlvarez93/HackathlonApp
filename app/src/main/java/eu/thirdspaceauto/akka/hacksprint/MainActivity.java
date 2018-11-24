@@ -17,16 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.SettingsClient;
-
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
-import eu.thirdspaceauto.akka.hacksprint.Fragments.InfoSheetFragment;
-import eu.thirdspaceauto.akka.hacksprint.Fragments.ShoeGrouserHeightFragment;
-import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
+import eu.thirdspaceauto.akka.hacksprint.Models.InspectionModel;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
 import eu.thirdspaceauto.akka.hacksprint.Utils.StringConstants;
@@ -43,8 +38,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView header_userEmail;
     private View headerLayout;
     private DrawerLayout drawerLayout;
-    private ViewPager viewPager;
-    private int currentFragment = 0;
+    public ViewPager viewPager;
+    public int currentFragment = 0;
+    public InspectionModel inspectionModel;
+    public Button previousButton, nextButton;
     InspectionPagerAdapter inspectionPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +67,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        findViewById (R.id.previousButton).setOnClickListener (this);
-        findViewById (R.id.nextButton).setOnClickListener (this);
+        previousButton = findViewById (R.id.previousButton);
+        previousButton.setOnClickListener (this);
+        nextButton = findViewById (R.id.nextButton);
+        nextButton.setOnClickListener (this);
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
         headerLayout = navigationView.getHeaderView(0);
-        header_userEmail=(TextView) headerLayout.findViewById(R.id.header_userEmail);
+        header_userEmail = (TextView) headerLayout.findViewById(R.id.header_userEmail);
 
 
         String userEmail = PreferencesManager.getString(StringConstants.KEY_USER_EMAIL,"");
@@ -87,7 +86,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 10);
         viewPager.setAdapter(inspectionPagerAdapter);
         viewPager.setCurrentItem(currentFragment);
-        
+	
+		if(getIntent ().getExtras () != null){
+			inspectionModel = new InspectionModel (getIntent ().getExtras ().getString ("model"), "Volvo");
+		}
     }
 
     @Override

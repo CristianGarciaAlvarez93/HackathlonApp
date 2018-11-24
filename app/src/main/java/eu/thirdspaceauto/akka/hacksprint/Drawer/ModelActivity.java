@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +94,10 @@ public class ModelActivity extends AppCompatActivity implements ModelViewAdapter
 
     @Override
     public void itemClick(View view, int position) {
-    	startActivity(new Intent(this, MainActivity.class));
+    	Intent modelActivityIntent = new Intent(this, MainActivity.class);
+		String model = ((TextView)view.findViewById (R.id.list_title)).getText ().toString ();
+		modelActivityIntent.putExtra ("model", model);
+    	startActivity(modelActivityIntent);
     }
 
 }
