@@ -26,6 +26,7 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
     private TextView std_max_value,std_min_value,left_link_pitch_btn,right_link_pitch_btn;
     private ImageView right_link_pitch_image, left_link_pitch_image;
     private View rootView;
+    private int REQUEST_CODE=100;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_track_link, container, false);
@@ -35,6 +36,8 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
         right_link_pitch_btn= (Button) rootView.findViewById(R.id.right_link_pitch_btn);
         left_link_pitch_image = rootView.findViewById(R.id.left_link_pitch_image);
         right_link_pitch_image= rootView.findViewById(R.id.right_link_pitch_image);
+        std_max_value=(TextView) rootView.findViewById(R.id.std_max_value);
+        std_min_value=(TextView) rootView.findViewById(R.id.std_min_value);
 
         left_link_pitch_btn.setOnClickListener(this);
         right_link_pitch_btn.setOnClickListener(this);
@@ -47,12 +50,12 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
             case R.id.left_link_pitch_btn:
                 Intent intent_link = new Intent(getActivity(),Preview.class);
                 intent_link.putExtra("component","left_link_pitch");
-                startActivityForResult(intent_link,100);
+                startActivityForResult(intent_link,REQUEST_CODE);
                 break;
             case R.id.right_link_pitch_btn:
                 Intent intent_right = new Intent(getActivity(),Preview.class);
                 intent_right.putExtra("component","right_link_pitch");
-                startActivityForResult(intent_right ,100);
+                startActivityForResult(intent_right ,REQUEST_CODE);
                 break;
         }
     }
@@ -61,7 +64,7 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
-        if(resultCode==100){
+        if(resultCode==REQUEST_CODE){
             String path = data.getStringExtra("path");
             String component = data.getStringExtra("component");
             showImageFromStorage(path,component);

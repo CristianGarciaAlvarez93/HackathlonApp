@@ -18,8 +18,9 @@
             android:layout_marginLeft="@dimen/margin_8"
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
+            android:textStyle="bold"
             android:text="Track Link Inspection: "
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/text_size16" />
 
         <android.support.v7.widget.CardView
@@ -45,11 +46,10 @@
                     android:id="@+id/link_pitch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_8"
                     android:padding="@dimen/margin_8"
                     android:textStyle="bold"
                     android:text="Link Pitch : "
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size16" />
 
                 <TextView
@@ -60,7 +60,7 @@
                     android:layout_marginRight="@dimen/margin_8"
                     android:paddingTop="@dimen/margin_5"
                     android:text="Std. max value : "
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size16" />
 
                 <TextView
@@ -71,7 +71,7 @@
                     android:layout_marginRight="@dimen/margin_8"
                     android:paddingTop="@dimen/margin_5"
                     android:text="Std. repair limit value :"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size16" />
 
                 <RelativeLayout

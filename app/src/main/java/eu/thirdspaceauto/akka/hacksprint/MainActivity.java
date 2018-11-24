@@ -1,8 +1,6 @@
 package eu.thirdspaceauto.akka.hacksprint;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,19 +13,13 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.SettingsClient;
+import com.rd.PageIndicatorView;
 
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
-import eu.thirdspaceauto.akka.hacksprint.Fragments.InfoSheetFragment;
-import eu.thirdspaceauto.akka.hacksprint.Fragments.ShoeGrouserHeightFragment;
-import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
 import eu.thirdspaceauto.akka.hacksprint.Utils.StringConstants;
@@ -47,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ViewPager viewPager;
     private int currentFragment = 0;
     InspectionPagerAdapter inspectionPagerAdapter;
+    PageIndicatorView pageIndicatorView;
+    TabLayout dots;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(ContextCompat.getDrawable(context,R.drawable.ic_menu_white_24dp));
-        toolbar.setTitle(getResources().getString(R.string.app_name));
+        toolbar.setTitle("Undercarriage Inspection");
         toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.white));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 10);
+        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 8);
         viewPager.setAdapter(inspectionPagerAdapter);
         viewPager.setCurrentItem(currentFragment);
-        
+
+        dots = (TabLayout) findViewById(R.id.dots);
+        dots.setupWithViewPager(viewPager, true);
     }
 
     @Override

@@ -10,14 +10,7 @@ import android.view.ViewGroup;
 
 import eu.thirdspaceauto.akka.hacksprint.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link InfoSheetFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link InfoSheetFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class InfoSheetFragment extends Fragment {
 	
 	public InfoSheetFragment () {
