@@ -24,6 +24,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.SettingsClient;
 
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
+import eu.thirdspaceauto.akka.hacksprint.Fragments.ShoeGrouserHeightFragment;
 import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
@@ -48,7 +49,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-
+		if (null == savedInstanceState) {
+			getSupportFragmentManager().beginTransaction()
+					.replace(R.id.frame_container, ShoeGrouserHeightFragment.newInstance())
+					.commit();
+		}
     }
 
     private void init() {
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(inspectionPagerAdapter);
         viewPager.setCurrentItem(0);
+        
     }
 
     @Override
