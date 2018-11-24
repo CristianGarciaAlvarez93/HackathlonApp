@@ -24,6 +24,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.SettingsClient;
 
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
+import eu.thirdspaceauto.akka.hacksprint.Fragments.InfoSheetFragment;
 import eu.thirdspaceauto.akka.hacksprint.Fragments.ShoeGrouserHeightFragment;
 import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
@@ -32,7 +33,7 @@ import eu.thirdspaceauto.akka.hacksprint.Utils.StringConstants;
 import eu.thirdspaceauto.akka.hacksprint.Utils.Utility;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private String TAG = MainActivity.class.getSimpleName();
     private Context context;
     private Activity activity;
@@ -43,17 +44,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private View headerLayout;
     private DrawerLayout drawerLayout;
     private ViewPager viewPager;
+    private int currentFragment = 0;
     InspectionPagerAdapter inspectionPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-		if (null == savedInstanceState) {
-			getSupportFragmentManager().beginTransaction()
-					.replace(R.id.frame_container, ShoeGrouserHeightFragment.newInstance())
-					.commit();
-		}
     }
 
     private void init() {
@@ -73,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        findViewById (R.id.previousButton).setOnClickListener (this);
+        findViewById (R.id.nextButton).setOnClickListener (this);
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
         headerLayout = navigationView.getHeaderView(0);
@@ -85,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 3);
+        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 10);
         viewPager.setAdapter(inspectionPagerAdapter);
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(currentFragment);
         
     }
 
@@ -117,4 +116,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(MainActivity.this, SplashActivity.class));
         MainActivity.this.finish();
     }
+	
+	@Override
+	public void onClick (View v) {
+		switch (v.getId ()){
+			case R.id.previousButton:
+				if(currentFragment >= 1){
+					--currentFragment;
+					viewPager.setCurrentItem(currentFragment);
+				}
+				break;
+			case R.id.nextButton:
+				if(currentFragment <=9){
+					++currentFragment;
+					viewPager.setCurrentItem (currentFragment);
+				}
+				break;
+		}
+	}
 }

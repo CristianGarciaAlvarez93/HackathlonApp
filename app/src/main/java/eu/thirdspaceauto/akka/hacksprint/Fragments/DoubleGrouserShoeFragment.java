@@ -12,31 +12,28 @@ import eu.thirdspaceauto.akka.hacksprint.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ShoeGrouserHeightFragment#newInstance} factory method to
+ * Activities that contain this fragment must implement the
+ * {@link DoubleGrouserShoeFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link DoubleGrouserShoeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ShoeGrouserHeightFragment extends Fragment {
+public class DoubleGrouserShoeFragment extends Fragment {
 	
-	public ShoeGrouserHeightFragment () {
+	public DoubleGrouserShoeFragment () {
 		// Required empty public constructor
-	}
-	
-	public static ShoeGrouserHeightFragment newInstance () {
-		ShoeGrouserHeightFragment fragment = new ShoeGrouserHeightFragment ();
-		Bundle args = new Bundle ();
-		fragment.setArguments (args);
-		return fragment;
 	}
 	
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate (savedInstanceState);
+		
 	}
 	
 	@Override
 	public View onCreateView (LayoutInflater inflater, ViewGroup container,
 							  Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		return inflater.inflate (R.layout.fragment_shoe_grouser_height, container, false);
+		return inflater.inflate (R.layout.fragment_double_grouser_shoe, container, false);
 	}
 }

@@ -18,7 +18,7 @@
             android:layout_marginLeft="@dimen/margin_8"
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
-            android:text="Track Link Insepection: "
+            android:text="Track Link Inspection: "
             android:textColor="@color/white"
             android:textSize="@dimen/text_size16" />
 

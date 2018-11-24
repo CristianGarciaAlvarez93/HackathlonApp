@@ -20,7 +20,7 @@
 			android:layout_marginLeft="@dimen/margin_8"
 			android:layout_toRightOf="@+id/still_img"
 			android:padding="@dimen/margin_8"
-			android:text="Triple Grouser Inspection: "
+			android:text="Bottom Roller: "
 			android:textColor="@color/white"
 			android:textSize="@dimen/text_size16"
 			android:textStyle="bold" />
@@ -51,7 +51,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="@dimen/margin_8"
 					android:padding="@dimen/margin_8"
-					android:text="Shoe grouser height: "
+					android:text="Roller thread diameter: "
 					android:textColor="@android:color/black"
 					android:textSize="@dimen/text_size16"
 					android:textStyle="bold" />
@@ -77,7 +77,7 @@
 							android:layout_height="wrap_content"
 							android:layout_weight="1"
 							android:textAlignment="textEnd"
-							android:text="26cm"
+							android:text="160cm"
 							android:textColor="@android:color/black" />
 					</LinearLayout>
 					<LinearLayout
@@ -96,7 +96,7 @@
 							android:layout_height="wrap_content"
 							android:layout_weight="1"
 							android:textAlignment="textEnd"
-							android:text="16cm"
+							android:text="144cm"
 							android:textColor="@android:color/black" />
 					</LinearLayout>
 					<LinearLayout
