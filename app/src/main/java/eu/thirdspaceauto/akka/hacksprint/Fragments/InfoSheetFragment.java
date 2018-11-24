@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import eu.thirdspaceauto.akka.hacksprint.MainActivity;
 import eu.thirdspaceauto.akka.hacksprint.R;
 
+
 public class InfoSheetFragment extends Fragment implements View.OnClickListener{
 	private EditText countryEditText, serialNumberEditText, grConditionEditText, operationHrsEditText, shoeWidth;
 	private RadioButton lowImpact, modImpact, highImpact, lowAbrasive, modAbrasive, highAbrasive, lowMoisture, modMoisture, highMoisture, lowPacking, modPacking, highPacking, tripleShoe,

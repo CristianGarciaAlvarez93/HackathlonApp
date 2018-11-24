@@ -1,8 +1,6 @@
 package eu.thirdspaceauto.akka.hacksprint;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public InspectionModel inspectionModel;
     public Button previousButton, nextButton;
     InspectionPagerAdapter inspectionPagerAdapter;
+    TabLayout dots;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(ContextCompat.getDrawable(context,R.drawable.ic_menu_white_24dp));
-        toolbar.setTitle(getResources().getString(R.string.app_name));
+        toolbar.setTitle("Undercarriage Inspection");
         toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.white));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,13 +82,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 10);
+        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 8);
         viewPager.setAdapter(inspectionPagerAdapter);
         viewPager.setCurrentItem(currentFragment);
 	
 		if(getIntent ().getExtras () != null){
 			inspectionModel = new InspectionModel (getIntent ().getExtras ().getString ("model"), "Volvo");
 		}
+		
+        dots = (TabLayout) findViewById(R.id.dots);
+        dots.setupWithViewPager(viewPager, true);
     }
 
     @Override
@@ -109,6 +111,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void logout() {

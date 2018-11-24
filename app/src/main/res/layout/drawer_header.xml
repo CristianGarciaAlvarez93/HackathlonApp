@@ -16,7 +16,7 @@
         android:padding="10dp"
         android:layout_above="@+id/header_userEmail"
         android:layout_marginLeft="16dp"
-        android:src="@drawable/tsa"/>
+        android:src="@drawable/volvo_logo_scaled"/>
         <TextView
             android:id="@+id/header_userEmail"
             android:layout_width="match_parent"

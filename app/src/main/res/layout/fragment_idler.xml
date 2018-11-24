@@ -12,48 +12,48 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/track_text"
+            android:id="@+id/idler_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_8"
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
-            android:textStyle="bold"
-            android:text="Track Link Inspection: "
+            android:text="Idler Insepection : "
             android:textColor="@color/black"
             android:textSize="@dimen/text_size16" />
 
-        <android.support.v7.widget.CardView
-			xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_subject_layout"
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/idler_height_top_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:elevation="2dp"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
             android:visibility="visible"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="8dp">
 
             <LinearLayout
-                android:id="@+id/link_pitch_layout"
+                android:id="@+id/idler_height_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/height_10"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/link_pitch"
+                    android:id="@+id/idler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/margin_8"
                     android:textStyle="bold"
-                    android:text="Link Pitch : "
+                    android:text="Idler Height: "
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_size16" />
 
                 <TextView
-                    android:id="@+id/std_max_value"
+                    android:id="@+id/height_std_max_value"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -64,7 +64,7 @@
                     android:textSize="@dimen/text_size16" />
 
                 <TextView
-                    android:id="@+id/std_min_value"
+                    android:id="@+id/height_std_min_value"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -75,12 +75,12 @@
                     android:textSize="@dimen/text_size16" />
 
                 <RelativeLayout
-                    android:id="@+id/left_imageLayout"
+                    android:id="@+id/left_height_imageLayout"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/height_10"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:id="@+id/left_title_image"
+                        android:id="@+id/left_height_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -90,19 +90,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_below="@+id/left_title_image">
+                        android:layout_below="@+id/left_height_text">
                         <ImageView
-                            android:id="@+id/left_link_pitch_image"
+                            android:id="@+id/left_height_image"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:alpha="0.87"
                             android:background="@drawable/tsa" />
                         <Button
-                            android:id="@+id/left_link_pitch_btn"
+                            android:id="@+id/left_height_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Add Image"
-                            android:layout_toRightOf="@+id/left_link_pitch_image"
+                            android:layout_toRightOf="@+id/left_height_image"
                             android:background="@color/white"
                             android:alpha="0.87"
                             android:textAllCaps="false"
@@ -112,12 +112,12 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/right_imageLayout"
+                    android:id="@+id/right_height_imageLayout"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/height_10"
                     android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/right_title_image"
+                    android:id="@+id/right_height_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -127,19 +127,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_below="@+id/right_title_image">
+                    android:layout_below="@+id/right_height_text">
                     <ImageView
-                        android:id="@+id/right_link_pitch_image"
+                        android:id="@+id/right_height_image"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:alpha="0.87"
                         android:background="@drawable/tsa" />
                     <Button
-                        android:id="@+id/right_link_pitch_btn"
+                        android:id="@+id/right_height_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Add Image"
-                        android:layout_toRightOf="@+id/right_link_pitch_image"
+                        android:layout_toRightOf="@+id/right_height_image"
                         android:background="@color/white"
                         android:alpha="0.87"
                         android:textAllCaps="false"
