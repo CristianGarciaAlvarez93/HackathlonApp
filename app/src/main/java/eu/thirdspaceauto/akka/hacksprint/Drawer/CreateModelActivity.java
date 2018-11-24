@@ -21,7 +21,7 @@ import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 public class CreateModelActivity extends AppCompatActivity implements View.OnClickListener {
     Activity activity;
     EditText title,info;
-    Spinner contry;
+    EditText contry;
     Button btn_save;
 
     @Override
@@ -31,7 +31,7 @@ public class CreateModelActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.create_new_model);
         title = (EditText) findViewById(R.id.title);
         info = (EditText) findViewById(R.id.info);
-        contry = (Spinner) findViewById(R.id.country);
+        contry = (EditText) findViewById(R.id.country);
 
         btn_save = (Button) findViewById(R.id.btn_save);
         btn_save.setOnClickListener(this);

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ViewPager viewPager;
     private int currentFragment = 0;
     InspectionPagerAdapter inspectionPagerAdapter;
-    PageIndicatorView pageIndicatorView;
     TabLayout dots;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

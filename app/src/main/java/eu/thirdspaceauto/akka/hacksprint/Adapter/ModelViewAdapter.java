@@ -40,7 +40,7 @@ public class ModelViewAdapter extends RecyclerView.Adapter<ModelViewAdapter.View
         Excavators excavator = excavatorsList.get(position);
         holder.name.setText(excavator.name);
         holder.info.setText(excavator.info);
-        holder.image.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.tsa));
+        holder.image.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.excavator));
 
     }
 

@@ -19,6 +19,7 @@
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
             android:text="Idler Insepection : "
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size16" />
 
