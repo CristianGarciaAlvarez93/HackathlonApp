@@ -10,4 +10,6 @@
     <dimen name="cardview_vertical_padding">2dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_16">16dp</dimen>
+	<dimen name="title">24sp</dimen>
+	<dimen name="big_margin_48dp">48dp</dimen>
 </resources>

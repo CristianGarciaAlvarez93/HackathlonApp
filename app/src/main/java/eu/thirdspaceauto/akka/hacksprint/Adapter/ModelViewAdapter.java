@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
-
-import javax.security.auth.Subject;
 
 import eu.thirdspaceauto.akka.hacksprint.Models.Excavators;
 import eu.thirdspaceauto.akka.hacksprint.R;
@@ -35,7 +32,7 @@ public class ModelViewAdapter extends RecyclerView.Adapter<ModelViewAdapter.View
     @Override
     public ModelViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(activity.getApplicationContext()).inflate(R.layout.single_model_view, parent, false);
-        return new ViewHolder(itemLayoutView);
+        return new ViewHolder(itemLayoutView, clickListener);
     }
 
     @Override
@@ -65,16 +62,25 @@ public class ModelViewAdapter extends RecyclerView.Adapter<ModelViewAdapter.View
         notifyItemRemoved(position);
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView  name;
         TextView info;
         ImageView image;
-
-        public ViewHolder(View itemLayoutView) {
+		private ModelViewAdapter.ItemClickListener mitemClickListener;
+        public ViewHolder(View itemLayoutView, ItemClickListener itemClickListener) {
             super(itemLayoutView);
             name= (TextView) itemLayoutView.findViewById(R.id.list_title);
             info= (TextView) itemLayoutView.findViewById(R.id.list_desc);
             image=(ImageView) itemLayoutView.findViewById(R.id.model_avatar);
+        	this.mitemClickListener = itemClickListener;
+        	itemLayoutView.setOnClickListener (this);
         }
-    }
+	
+		@Override
+		public void onClick (View v) {
+			if(mitemClickListener != null){
+				mitemClickListener.itemClick (v, getAdapterPosition ());
+			}
+		}
+	}
 }
