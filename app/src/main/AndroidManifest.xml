@@ -38,6 +38,8 @@
 		<activity android:name=".MainActivity"/>
 
 		<activity android:name=".Drawer.Preview"/>
+        <activity android:name=".FinalActivity" />
+
         <service android:name=".FirebaseServices.DataHungryFireBaseMsgService">
 
 			<intent-filter>
