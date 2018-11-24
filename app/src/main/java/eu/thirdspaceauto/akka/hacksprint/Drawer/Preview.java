@@ -185,7 +185,6 @@ public class Preview extends Activity {
         int h = bitmap.getHeight();
 
         Matrix mtx = new Matrix();
-        //       mtx.postRotate(degree);
         mtx.setRotate(degree);
 
         return Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, true);

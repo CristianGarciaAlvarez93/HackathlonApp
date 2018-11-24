@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import eu.thirdspaceauto.akka.hacksprint.Fragments.IdlerFragment;
+import eu.thirdspaceauto.akka.hacksprint.Fragments.SprocketFragment;
+import eu.thirdspaceauto.akka.hacksprint.Fragments.TopRollerFragment;
 import eu.thirdspaceauto.akka.hacksprint.Fragments.TrackLinkFragment;
 
 
@@ -19,14 +22,14 @@ public class InspectionPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                TrackLinkFragment trackLinkFragment = new TrackLinkFragment();
-                return trackLinkFragment;
+                TopRollerFragment topRollerFragment= new TopRollerFragment();
+                return topRollerFragment;
             case 1:
-                TrackLinkFragment trackLinkFragment2 = new TrackLinkFragment();
-                return trackLinkFragment2;
+                IdlerFragment idlerFragment= new IdlerFragment();
+                return idlerFragment;
             case 2:
-                TrackLinkFragment trackLinkFragment3 = new TrackLinkFragment();
-                return trackLinkFragment3;
+                SprocketFragment sprocketFragment= new SprocketFragment();
+                return sprocketFragment;
             default:
                 return null;
         }
