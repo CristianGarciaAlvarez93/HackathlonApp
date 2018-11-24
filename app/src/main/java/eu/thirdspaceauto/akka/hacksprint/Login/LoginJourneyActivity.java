@@ -31,6 +31,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 
+import eu.thirdspaceauto.akka.hacksprint.Drawer.ModelActivity;
 import eu.thirdspaceauto.akka.hacksprint.MainActivity;
 import eu.thirdspaceauto.akka.hacksprint.R;
 import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
@@ -195,7 +196,7 @@ public class LoginJourneyActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void startHomeActivity() {
-        startActivity(new Intent(LoginJourneyActivity.this, MainActivity.class));
+        startActivity(new Intent(LoginJourneyActivity.this, ModelActivity.class));
         LoginJourneyActivity.this.finish();
     }
 

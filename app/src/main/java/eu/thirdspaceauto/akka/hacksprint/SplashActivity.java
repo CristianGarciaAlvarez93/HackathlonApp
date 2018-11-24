@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
+import eu.thirdspaceauto.akka.hacksprint.Drawer.ModelActivity;
 import eu.thirdspaceauto.akka.hacksprint.Login.LoginJourneyActivity;
 import eu.thirdspaceauto.akka.hacksprint.Utils.LogUtils;
 import eu.thirdspaceauto.akka.hacksprint.Utils.Utility;
@@ -26,7 +27,7 @@ import static android.Manifest.permission.RECEIVE_SMS;
 
 public class SplashActivity extends AppCompatActivity {
     private String TAG = "SplashActivity";
-    Intent mainActivityIntent, loginIntent, mapActivityIntent, videoActivityIntent, affdexIntent = null;
+    Intent mainActivityIntent, loginIntent,modelActivityIntent, mapActivityIntent, videoActivityIntent, affdexIntent = null;
     Activity activity;
     CountDownTimer countDownTimer;
     public static final int RequestPermissionCode = 7;
@@ -40,6 +41,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         mainActivityIntent = new Intent(SplashActivity.this, MainActivity.class);
+        modelActivityIntent = new Intent(SplashActivity.this, ModelActivity.class);
         loginIntent = new Intent(SplashActivity.this, LoginJourneyActivity.class);
 
         countDownTimer = new CountDownTimer(1500, 500) {
@@ -54,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.startActivity(loginIntent);
                     SplashActivity.this.finish();
                 }else{
-                    SplashActivity.this.startActivity(mainActivityIntent);
+                    SplashActivity.this.startActivity(modelActivityIntent);
                     SplashActivity.this.finish();
                 }
             }
