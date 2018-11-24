@@ -19,9 +19,10 @@ import eu.thirdspaceauto.akka.hacksprint.Models.SMS;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
 
 public class Common extends Application {
-    public static ArrayList<Contact> contactList = new ArrayList();
     public static Editor editor;
     public static SharedPreferences prefs;
+
+    public static ArrayList<Excavators> excavators = new ArrayList<> ();
 
     public void onCreate() {
         super.onCreate();

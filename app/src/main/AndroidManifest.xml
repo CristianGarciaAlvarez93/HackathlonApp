@@ -23,12 +23,11 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-
 		<activity android:name=".Login.LoginJourneyActivity" />
-
 		<activity android:name=".SplashActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
+
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
@@ -40,11 +39,11 @@
 
 		<activity android:name=".Drawer.Preview"/>
         <service android:name=".FirebaseServices.DataHungryFireBaseMsgService">
+
 			<intent-filter>
 				<action android:name="com.google.firebase.MESSAGING_EVENT" />
 			</intent-filter>
 		</service>
-
 		<service android:name=".FirebaseServices.DataHungryFireBaseInstanceIdService">
 			<intent-filter>
 				<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />

@@ -38,4 +38,8 @@
     <dimen name="text_size22">22sp</dimen>
     <dimen name="text_size24">24sp</dimen>
     <dimen name="text_size28">28sp</dimen>
+
+	<dimen name="title">24sp</dimen>
+	<dimen name="big_margin_48dp">48dp</dimen>
+
 </resources>

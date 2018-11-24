@@ -46,11 +46,14 @@ public class CreateModelActivity extends AppCompatActivity implements View.OnCli
                 } else {
                     String title_text = title.getText().toString();
                     String info_text = info.getText().toString();
-
-
-                    Excavators excavators = new Excavators();
+                    
                     Toast.makeText(getApplicationContext(),"Model saved",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(CreateModelActivity.this,ModelActivity.class));
+                    
+                    Intent saveModelIntent = new Intent (CreateModelActivity.this, ModelActivity.class);
+                    saveModelIntent.putExtra ("title", title_text);
+                    saveModelIntent.putExtra ("info", info_text);
+                    saveModelIntent.putExtra ("type", "saveData");
+                    startActivity(saveModelIntent);
                 }
                 break;
         }
