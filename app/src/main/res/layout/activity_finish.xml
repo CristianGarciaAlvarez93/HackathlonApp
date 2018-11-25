@@ -52,14 +52,14 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size16" />
 
-            <ImageView
-                android:layout_below="@+id/inspection_info_text"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/excel"
-                android:layout_marginTop="@dimen/margin_32"
-                android:id="@+id/excel"/>
+			<ImageView
+				android:id="@+id/excel"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:layout_below="@+id/inspection_info_text"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="@dimen/margin_32"
+				android:background="@drawable/pdf" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

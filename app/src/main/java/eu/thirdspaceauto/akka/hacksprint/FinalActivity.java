@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
@@ -29,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Method;
 
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
@@ -128,13 +131,22 @@ public class FinalActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.excel:
+				if(Build.VERSION.SDK_INT>=24){
+					try{
+						Method m = StrictMode.class.getMethod("disableDeathOnFileUriExposure");
+						m.invoke(null);
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+				}
                 File sdCard = Environment.getExternalStorageDirectory();
-                File myDir= new File(sdCard.getAbsolutePath() + "/volvo","uc_inspection_sheet_volvo_ec220e.xls");
+                File myDir= new File(sdCard.getAbsolutePath() + "/volvo/","UC_Inspection_sheet_Volvo_EC220E.pdf");
                 Intent intentXlsx = new Intent(Intent.ACTION_VIEW);
-                intentXlsx.setDataAndType(Uri.parse(myDir.toString()), "*/*");
+                intentXlsx.setDataAndType(Uri.fromFile (myDir), "application/pdf");
                 intentXlsx.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intentXlsx.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION );
-                startActivity(Intent.createChooser(intentXlsx, "Open excel file"));
+                startActivity(Intent.createChooser(intentXlsx, "Open pdf file"));
+                Log.e (TAG, Uri.parse (myDir.toString ()).toString ());
                 break;
             case R.id.new_inspection:
                 gotoHome();
