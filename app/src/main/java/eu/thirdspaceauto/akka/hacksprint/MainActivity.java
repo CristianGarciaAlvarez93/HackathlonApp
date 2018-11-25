@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import eu.thirdspaceauto.akka.hacksprint.Adapter.InspectionPagerAdapter;
+import eu.thirdspaceauto.akka.hacksprint.Drawer.InspectionReportActivity;
 import eu.thirdspaceauto.akka.hacksprint.Models.InspectionModel;
 import eu.thirdspaceauto.akka.hacksprint.Utils.MarshMallowPermission;
 import eu.thirdspaceauto.akka.hacksprint.Utils.PreferencesManager;
@@ -127,6 +128,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.my_excavators:
                 break;
             case R.id.old_inspection:
+            	Intent oldInspectionIntent = new Intent (MainActivity.this, InspectionReportActivity.class);
+            	startActivity (oldInspectionIntent);
                 break;
             case R.id.account:
                 break;

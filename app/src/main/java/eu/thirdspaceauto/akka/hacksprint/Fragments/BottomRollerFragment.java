@@ -17,8 +17,6 @@ import java.io.File;
 import eu.thirdspaceauto.akka.hacksprint.Drawer.Preview;
 import eu.thirdspaceauto.akka.hacksprint.R;
 
-
-
 public class BottomRollerFragment extends Fragment implements View.OnClickListener {
 	private String TAG=BottomRollerFragment.class.getSimpleName();
 	private int REQUEST_CODE=103;

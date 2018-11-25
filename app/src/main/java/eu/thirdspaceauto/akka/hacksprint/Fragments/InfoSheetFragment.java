@@ -91,6 +91,7 @@ public class InfoSheetFragment extends Fragment implements View.OnClickListener{
 				}
 				break;
 			case R.id.nextButton:
+				if(parentActivity.inspectionModel == null)return;
 				parentActivity.inspectionModel.country = countryEditText.getText ().toString ();
 				parentActivity.inspectionModel.serialNumber = countryEditText.getText ().toString ();
 				parentActivity.inspectionModel.grConditions = grConditionEditText.getText ().toString ();
@@ -99,21 +100,21 @@ public class InfoSheetFragment extends Fragment implements View.OnClickListener{
 				if(lowImpact.isChecked ())parentActivity.inspectionModel.impact = "Low";
 				if(modImpact.isChecked ())parentActivity.inspectionModel.impact = "Mod";
 				if(highImpact.isChecked ())parentActivity.inspectionModel.impact = "High";
-				if(lowAbrasive.isChecked ())parentActivity.inspectionModel.abrasive= "Low";
-				if(modAbrasive.isChecked ())parentActivity.inspectionModel.abrasive= "Mod";
-				if(highAbrasive.isChecked ())parentActivity.inspectionModel.abrasive= "High";
-				if(lowMoisture.isChecked ())parentActivity.inspectionModel.moisture= "Low";
-				if(modMoisture.isChecked ())parentActivity.inspectionModel.moisture= "Mod";
-				if(highMoisture.isChecked ())parentActivity.inspectionModel.moisture= "High";
-				if(lowPacking.isChecked ())parentActivity.inspectionModel.packing= "Low";
-				if(modPacking.isChecked ())parentActivity.inspectionModel.packing= "Mod";
-				if(highPacking.isChecked ())parentActivity.inspectionModel.packing= "High";
-				if(tripleShoe.isChecked ())parentActivity.inspectionModel.shoeType= "Triple";
-				if(doubleShoe.isChecked ())parentActivity.inspectionModel.shoeType= "Double";
-				if(singleShoe.isChecked ())parentActivity.inspectionModel.shoeType= "Single";
-				if(tripleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Triple";
-				if(doubleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Double";
-				if(singleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Single";
+				if(lowAbrasive.isChecked ())parentActivity.inspectionModel.abrasive = "Low";
+				if(modAbrasive.isChecked ())parentActivity.inspectionModel.abrasive = "Mod";
+				if(highAbrasive.isChecked ())parentActivity.inspectionModel.abrasive = "High";
+				if(lowMoisture.isChecked ())parentActivity.inspectionModel.moisture = "Low";
+				if(modMoisture.isChecked ())parentActivity.inspectionModel.moisture = "Mod";
+				if(highMoisture.isChecked ())parentActivity.inspectionModel.moisture = "High";
+				if(lowPacking.isChecked ())parentActivity.inspectionModel.packing = "Low";
+				if(modPacking.isChecked ())parentActivity.inspectionModel.packing = "Mod";
+				if(highPacking.isChecked ())parentActivity.inspectionModel.packing = "High";
+				if(tripleShoe.isChecked ())parentActivity.inspectionModel.shoeType = "Triple";
+				if(doubleShoe.isChecked ())parentActivity.inspectionModel.shoeType = "Double";
+				if(singleShoe.isChecked ())parentActivity.inspectionModel.shoeType = "Single";
+				if(tripleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension = "Triple";
+				if(doubleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension = "Double";
+				if(singleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension = "Single";
 				if(parentActivity.currentFragment <7){
 					++parentActivity.currentFragment;
 					parentActivity.viewPager.setCurrentItem (parentActivity.currentFragment);
