@@ -27,6 +27,7 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
     private ImageView right_link_pitch_image, left_link_pitch_image;
     private View rootView;
     private int REQUEST_CODE=100;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_track_link, container, false);
@@ -50,11 +51,13 @@ public class TrackLinkFragment extends Fragment implements View.OnClickListener 
             case R.id.left_link_pitch_btn:
                 Intent intent_link = new Intent(getActivity(),Preview.class);
                 intent_link.putExtra("component","left_link_pitch");
+                intent_link.putExtra("request_code",REQUEST_CODE);
                 startActivityForResult(intent_link,REQUEST_CODE);
                 break;
             case R.id.right_link_pitch_btn:
                 Intent intent_right = new Intent(getActivity(),Preview.class);
                 intent_right.putExtra("component","right_link_pitch");
+                intent_right.putExtra("request_code",REQUEST_CODE);
                 startActivityForResult(intent_right ,REQUEST_CODE);
                 break;
         }

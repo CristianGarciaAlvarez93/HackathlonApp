@@ -6,10 +6,16 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.ContactsContract.PhoneLookup;
 import android.support.multidex.MultiDex;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import eu.thirdspaceauto.akka.hacksprint.Models.Contact;

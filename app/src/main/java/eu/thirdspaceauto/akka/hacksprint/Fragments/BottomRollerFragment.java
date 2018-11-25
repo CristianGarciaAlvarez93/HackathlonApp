@@ -17,63 +17,57 @@ import java.io.File;
 import eu.thirdspaceauto.akka.hacksprint.Drawer.Preview;
 import eu.thirdspaceauto.akka.hacksprint.R;
 
-public class BottomRollerFragment extends Fragment implements View.OnClickListener{
-	
-	private String TAG = BottomRollerFragment.class.getSimpleName();
-	private Button left_link_pitch_btn, right_link_pitch_btn;
-	private ImageView left_link_pitch_image, right_link_pitch_image;
-	private int REQUEST_CODE = 100;
-	
-	public BottomRollerFragment () {
-		// Required empty public constructor
-	}
-	
-	@Override
-	public void onCreate (Bundle savedInstanceState) {
-		super.onCreate (savedInstanceState);
-	}
-	
+public class BottomRollerFragment extends Fragment implements View.OnClickListener {
+	private String TAG=BottomRollerFragment.class.getSimpleName();
+	private int REQUEST_CODE=103;
+	Button left_link_pitch_btn,right_link_pitch_btn;
+	ImageView right_link_pitch_image,left_link_pitch_image;
+	private View rootView;
 	@Override
 	public View onCreateView (LayoutInflater inflater, ViewGroup container,
 							  Bundle savedInstanceState) {
-		View view = inflater.inflate (R.layout.fragment_bottom_roller, container, false);
-		left_link_pitch_btn = (Button) view.findViewById (R.id.left_link_pitch_btn);
-		right_link_pitch_btn = (Button) view.findViewById (R.id.right_link_pitch_btn);
-		left_link_pitch_image = view.findViewById (R.id.left_link_pitch_image);
-		right_link_pitch_image = view.findViewById (R.id.right_link_pitch_image);
-		
-		left_link_pitch_btn.setOnClickListener (this);
-		right_link_pitch_btn.setOnClickListener (this);
-		
-		return view;
+		// Inflate the layout for this fragment
+		rootView = inflater.inflate (R.layout.fragment_bottom_roller, container, false);
+		left_link_pitch_btn = (Button) rootView.findViewById(R.id.left_link_pitch_btn);
+		right_link_pitch_btn= (Button) rootView.findViewById(R.id.right_link_pitch_btn);
+		left_link_pitch_image = rootView.findViewById(R.id.left_link_pitch_image);
+		right_link_pitch_image= rootView.findViewById(R.id.right_link_pitch_image);
+
+		left_link_pitch_btn.setOnClickListener(this);
+		right_link_pitch_btn.setOnClickListener(this);
+
+		return rootView;
 	}
-	
+
 	@Override
-	public void onClick (View v) {
-		switch (v.getId ()) {
+	public void onClick(View v) {
+		switch (v.getId()){
 			case R.id.left_link_pitch_btn:
-				Intent intent_link = new Intent (getActivity (), Preview.class);
-				intent_link.putExtra ("component", "left_link_pitch");
-				startActivityForResult (intent_link, REQUEST_CODE);
+				Intent intent_link = new Intent(getActivity(),Preview.class);
+				intent_link.putExtra("component","left_link_pitch");
+				intent_link.putExtra("request_code",REQUEST_CODE);
+				startActivityForResult(intent_link,REQUEST_CODE);
 				break;
 			case R.id.right_link_pitch_btn:
-				Intent intent_right = new Intent (getActivity (), Preview.class);
-				intent_right.putExtra ("component", "right_link_pitch");
-				startActivityForResult (intent_right, REQUEST_CODE);
+				Intent intent_right = new Intent(getActivity(),Preview.class);
+				intent_right.putExtra("component","right_link_pitch");
+				intent_right.putExtra("request_code",REQUEST_CODE);
+				startActivityForResult(intent_right ,REQUEST_CODE);
 				break;
 		}
 	}
+
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
+		Log.d(TAG,"resultcode BottomRoller= "+resultCode + " data= "+data);
 		if(resultCode==REQUEST_CODE){
 			String path = data.getStringExtra("path");
 			String component = data.getStringExtra("component");
 			showImageFromStorage(path,component);
 		}
 	}
-	
+
 	private void showImageFromStorage(String path,String component) {
 		File imgFile = new  File(path);
 		if(imgFile.exists()){

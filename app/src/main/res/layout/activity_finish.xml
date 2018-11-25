@@ -16,12 +16,13 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_finish"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:titleTextColor="@color/white"></android.support.v7.widget.Toolbar>
+                app:titleTextColor="@color/white">
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
@@ -49,7 +50,7 @@
                 android:padding="@dimen/margin_8"
                 android:text="@string/inspection_info"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size14" />
+                android:textSize="@dimen/text_size16" />
 
             <ImageView
                 android:layout_below="@+id/inspection_info_text"
@@ -57,9 +58,16 @@
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/excel"
-                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_32"
                 android:id="@+id/excel"/>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_size12"
+                android:text="Inspection_EC220E_25_11_2018.xls"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_below="@+id/excel"/>
             <Button
                 android:id="@+id/new_inspection"
                 android:text=" New Inspection "

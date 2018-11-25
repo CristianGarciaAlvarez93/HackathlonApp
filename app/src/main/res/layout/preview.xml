@@ -7,27 +7,31 @@
         android:layout_height="match_parent"
         android:background="@color/black">
 
-        <ImageView
-            android:layout_marginTop="@dimen/margin_16"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/track_link_height"
-            android:layout_centerHorizontal="true"/>
+        <eu.thirdspaceauto.akka.hacksprint.Utils.GIFView
+            android:id="@+id/gif_view"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/volvo_logo_scaled"/>
 
         <TextView
+            android:id="@+id/image_info_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
-            android:layout_above="@+id/surfaceView"
-            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_below="@+id/gif_view"
+            android:layout_margin="@dimen/margin_8"
+            android:textAlignment="center"
             android:textSize="@dimen/margin_16"
-            android:text="Please align the component within camera preview"/>
+            android:text="Please align the component within camera preview as per the video above."/>
     <SurfaceView
         android:id="@+id/surfaceView"
         android:layout_width="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_height="300dp" />
+        android:layout_below="@+id/image_info_text"
+        android:layout_height="250dp" />
 
      <Button
         android:id="@+id/btnCapture"

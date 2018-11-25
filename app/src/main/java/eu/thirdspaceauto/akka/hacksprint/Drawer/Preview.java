@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
@@ -34,6 +35,7 @@ import android.widget.Toast;
 
 import eu.thirdspaceauto.akka.hacksprint.R;
 import eu.thirdspaceauto.akka.hacksprint.Utils.CameraPreview;
+import eu.thirdspaceauto.akka.hacksprint.Utils.GIFView;
 
 public class Preview extends Activity {
     private static final String TAG = "PreviewActivity";
@@ -43,6 +45,8 @@ public class Preview extends Activity {
     Activity act;
     Context ctx;
     String component_str= "";
+    GIFView gifView;
+    int REQUEST_CODE;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +54,14 @@ public class Preview extends Activity {
         act = this;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         component_str = getIntent().getStringExtra("component");
+        REQUEST_CODE = getIntent().getIntExtra("request_code",100);
         setContentView(R.layout.preview);
+
+        gifView = (GIFView) findViewById(R.id.gif_view);
+        gifView.loadGIFResource(this, R.drawable.triple_shoe_1);
+
 
         preview = new CameraPreview(this, (SurfaceView) findViewById(R.id.surfaceView));
         preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -70,7 +80,9 @@ public class Preview extends Activity {
         buttonClick = (Button) findViewById(R.id.btnCapture);
         buttonClick.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+                if(camera!=null) {
+                    camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+                }
             }
         });
     }
@@ -175,7 +187,7 @@ public class Preview extends Activity {
             Intent intent = new Intent();
             intent.putExtra("path",path);
             intent.putExtra("component",component_str);
-            setResult(100,intent);
+            setResult(REQUEST_CODE,intent);
             act.finish();
         }
     }
