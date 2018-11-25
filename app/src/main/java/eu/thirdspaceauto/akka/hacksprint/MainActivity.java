@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 				}
 				break;
 			case R.id.nextButton:
-				if(currentFragment <=9){
+				if(currentFragment <=6){
 					++currentFragment;
 					viewPager.setCurrentItem (currentFragment);
 				}

@@ -11,8 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9136cb17-a26b-4ff3-a55f-3436577a1001" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_info_sheet.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_info_sheet.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +44,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fragment_info_sheet.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fragment_info_sheet.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_info_sheet.xml">
           <provider editor-type-id="android-designer2">
             <state />
@@ -54,6 +53,18 @@
             <state relative-caret-position="285">
               <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="138" column="38" lean-forward="false" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2408,7 +2419,6 @@
         <option value="$PROJECT_DIR$/src/main/res/drawable/default_dot.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/preview.xml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Adapter/InspectionPagerAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_track_link.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_shoe_grouser_height.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_bottom_roller.xml" />
@@ -2422,6 +2432,7 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_sprocket.xml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/InfoSheetFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_info_sheet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2729,7 +2740,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3203,18 +3214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1496">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2595#2773#0" expanded="false" />
-            <element signature="e#2772#2773#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/Fragments/TripleGrouserShoeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-161">
@@ -3252,6 +3251,16 @@
         <state relative-caret-position="285">
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/thirdspaceauto/akka/hacksprint/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="138" column="38" lean-forward="false" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
