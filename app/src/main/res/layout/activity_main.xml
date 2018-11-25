@@ -43,14 +43,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/thank_you_text"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
                 </FrameLayout>
 
                 <android.support.v4.view.ViewPager

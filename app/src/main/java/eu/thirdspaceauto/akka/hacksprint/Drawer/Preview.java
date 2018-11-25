@@ -46,6 +46,7 @@ public class Preview extends Activity {
     Context ctx;
     String component_str= "";
     GIFView gifView;
+    int REQUEST_CODE;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,9 @@ public class Preview extends Activity {
         act = this;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         component_str = getIntent().getStringExtra("component");
+        REQUEST_CODE = getIntent().getIntExtra("request_code",100);
         setContentView(R.layout.preview);
 
         gifView = (GIFView) findViewById(R.id.gif_view);
@@ -77,7 +80,9 @@ public class Preview extends Activity {
         buttonClick = (Button) findViewById(R.id.btnCapture);
         buttonClick.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+                if(camera!=null) {
+                    camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+                }
             }
         });
     }
@@ -182,7 +187,7 @@ public class Preview extends Activity {
             Intent intent = new Intent();
             intent.putExtra("path",path);
             intent.putExtra("component",component_str);
-            setResult(100,intent);
+            setResult(REQUEST_CODE,intent);
             act.finish();
         }
     }

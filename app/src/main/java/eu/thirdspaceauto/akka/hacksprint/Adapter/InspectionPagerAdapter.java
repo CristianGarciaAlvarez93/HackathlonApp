@@ -29,10 +29,10 @@ public class InspectionPagerAdapter extends FragmentStatePagerAdapter {
 			case 0:
 				InfoSheetFragment infoSheetFragment = new InfoSheetFragment();
 				return infoSheetFragment;
-            case 1:
+            case 2:
                 TrackLinkFragment trackLinkFragment = new TrackLinkFragment();
                 return trackLinkFragment;
-			case 2:
+			case 1:
 				TripleGrouserShoeFragment shoeGrouserHeightFragment = new TripleGrouserShoeFragment();
 				return shoeGrouserHeightFragment;
 			case 3:

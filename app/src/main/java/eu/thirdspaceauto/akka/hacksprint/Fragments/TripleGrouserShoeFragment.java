@@ -20,7 +20,7 @@ import eu.thirdspaceauto.akka.hacksprint.Drawer.Preview;
 import eu.thirdspaceauto.akka.hacksprint.R;
 
 public class TripleGrouserShoeFragment extends Fragment implements View.OnClickListener {
-	private String TAG = TrackLinkFragment.class.getSimpleName();
+	private String TAG = TripleGrouserShoeFragment.class.getSimpleName();
 	private TextView std_max_value,std_min_value,right_triple_shoe_btn,light_triple_shoe_btn;
 	private ImageView right_triple_shoe_image, left_triple_shoe_image;
 	private View rootView;
@@ -33,8 +33,8 @@ public class TripleGrouserShoeFragment extends Fragment implements View.OnClickL
 //		std_min_value = rootView.findViewById(R.id.std_min_value);
 		right_triple_shoe_btn = (Button) rootView.findViewById(R.id.right_triple_show_btn);
 		light_triple_shoe_btn= (Button) rootView.findViewById(R.id.left_triple_show_btn);
-		left_triple_shoe_image = rootView.findViewById(R.id.left_link_pitch_image);
-		right_triple_shoe_image= rootView.findViewById(R.id.right_link_pitch_image);
+		left_triple_shoe_image = rootView.findViewById(R.id.left_triple_show_image);
+		right_triple_shoe_image= rootView.findViewById(R.id.right_triple_show_image);
 //		std_max_value=(TextView) rootView.findViewById(R.id.std_max_value);
 //		std_min_value=(TextView) rootView.findViewById(R.id.std_min_value);
 		left_measurement=(EditText) rootView.findViewById(R.id.left_measurement);
@@ -50,12 +50,15 @@ public class TripleGrouserShoeFragment extends Fragment implements View.OnClickL
 			case R.id.left_triple_show_btn:
 				Intent intent_link = new Intent(getActivity(),Preview.class);
 				intent_link.putExtra("component","left_triple_show");
+				intent_link.putExtra("request_code",REQUEST_CODE);
 				startActivityForResult(intent_link,REQUEST_CODE);
 				break;
-			case R.id.left_link_pitch_btn:
+			case R.id.right_triple_show_btn:
 				Intent intent_right = new Intent(getActivity(),Preview.class);
 				intent_right.putExtra("component","right_triple_show");
+				intent_right.putExtra("request_code",REQUEST_CODE);
 				startActivityForResult(intent_right ,REQUEST_CODE);
+
 				break;
 		}
 	}
@@ -63,7 +66,7 @@ public class TripleGrouserShoeFragment extends Fragment implements View.OnClickL
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
+		Log.d(TAG,"resultcode triple_grouser= "+resultCode + " data= "+data);
 		if(resultCode==REQUEST_CODE){
 			String path = data.getStringExtra("path");
 			String component = data.getStringExtra("component");

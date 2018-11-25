@@ -47,11 +47,13 @@ public class SprocketFragment extends Fragment implements View.OnClickListener {
             case R.id.left_sprocket_btn:
                 Intent intent_link = new Intent(getActivity(),Preview.class);
                 intent_link.putExtra("component","left_sprocket");
+                intent_link.putExtra("request_code",REQUEST_CODE);
                 startActivityForResult(intent_link,REQUEST_CODE);
                 break;
             case R.id.right_sprocket_btn:
                 Intent intent_right = new Intent(getActivity(),Preview.class);
                 intent_right.putExtra("component","right_sprocket");
+                intent_right.putExtra("request_code",REQUEST_CODE);
                 startActivityForResult(intent_right ,REQUEST_CODE);
                 break;
         }
