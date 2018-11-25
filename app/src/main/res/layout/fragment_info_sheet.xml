@@ -40,7 +40,7 @@
                     android:layout_weight="1"
                     android:text="Site/Country:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    />
 
                 <EditText
                     android:layout_weight="2"
@@ -54,7 +54,7 @@
                     android:layout_weight="1"
                     android:text="Serial Nº:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <EditText
                     android:layout_weight="2"
@@ -68,7 +68,7 @@
                     android:layout_weight="1"
                     android:text="Gr. Condition:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <EditText
                     android:layout_weight="2"
@@ -83,7 +83,7 @@
                     android:layout_weight="1"
                     android:text="Operation hrs:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <EditText
                     android:layout_weight="2"
@@ -97,7 +97,7 @@
                     android:layout_weight="1"
                     android:text="Shoe width:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <EditText
                     android:layout_weight="2"
@@ -112,7 +112,7 @@
                     android:layout_weight="1"
                     android:text="Impact:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"
@@ -148,7 +148,7 @@
                     android:layout_weight="1"
                     android:text="Abrasive:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"
@@ -184,7 +184,7 @@
                     android:layout_weight="1"
                     android:text="Moisture:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"
@@ -220,7 +220,7 @@
                     android:layout_weight="1"
                     android:text="Packing:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"
@@ -255,7 +255,7 @@
                     android:layout_weight="1"
                     android:text="Shoe type:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"
@@ -290,7 +290,7 @@
                     android:layout_weight="1"
                     android:text="Track tension:"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <RadioGroup
                     android:layout_weight="2"

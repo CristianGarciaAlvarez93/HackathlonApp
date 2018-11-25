@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 8);
+        inspectionPagerAdapter = new InspectionPagerAdapter(getSupportFragmentManager(), 7);
         viewPager.setAdapter(inspectionPagerAdapter);
         viewPager.setCurrentItem(currentFragment);
 

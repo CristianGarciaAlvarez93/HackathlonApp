@@ -73,7 +73,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="26cm"
+                            android:text="26mm"
                             android:textAlignment="textStart"
                             android:textColor="@android:color/black" />
                     </LinearLayout>
@@ -94,7 +94,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="16cm"
+                            android:text="16mm"
                             android:textAlignment="textStart"
                             android:textColor="@android:color/black" />
                     </LinearLayout>
