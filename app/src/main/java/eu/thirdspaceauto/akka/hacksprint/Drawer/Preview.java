@@ -169,7 +169,6 @@ public class Preview extends Activity {
                 outStream.flush();
                 outStream.close();
 
-                Log.d(TAG, "onPictureTaken - wrote bytes: " + data.length + " to " + outFile.getAbsolutePath());
                 path = outFile.getAbsolutePath();
                 refreshGallery(outFile);
 

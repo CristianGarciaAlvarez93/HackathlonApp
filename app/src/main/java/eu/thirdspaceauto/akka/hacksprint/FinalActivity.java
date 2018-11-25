@@ -104,6 +104,7 @@ public class FinalActivity extends AppCompatActivity implements View.OnClickList
                 gotoHome();
             }
         });
+        new_inspection.setOnClickListener(this);
     }
     
     public String readTextFile(InputStream inputStream) {
