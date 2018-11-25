@@ -62,7 +62,7 @@ public class TopRollerFragment extends Fragment implements View.OnClickListener 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
+		Log.d(TAG,"resultcode TopRoller= "+resultCode + " data= "+data);
 		if(resultCode==REQUEST_CODE){
 			String path = data.getStringExtra("path");
 			String component = data.getStringExtra("component");
@@ -74,9 +74,9 @@ public class TopRollerFragment extends Fragment implements View.OnClickListener 
 		File imgFile = new  File(path);
 		if(imgFile.exists()){
 			Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-			if(component.equalsIgnoreCase("left_link_pitch")) {
+			if(component.equalsIgnoreCase("left_height")) {
 				left_height_image.setImageBitmap(myBitmap);
-			}else if(component.equalsIgnoreCase("right_link_pitch")){
+			}else if(component.equalsIgnoreCase("right_height")){
 				right_height_image.setImageBitmap(myBitmap);
 			}
 		}

@@ -1,6 +1,7 @@
 package eu.thirdspaceauto.akka.hacksprint.Drawer;
 
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -150,8 +151,8 @@ public class Preview extends Activity {
             // Write to SD Card
             try {
 
-                Bitmap realImage = BitmapFactory.decodeByteArray(data[0], 0, data.length);
-//                realImage = rotate(realImage, 270);
+                Bitmap realImage = BitmapFactory.decodeByteArray(data[0], 0, data[0].length);
+                Bitmap final_bitmap = rotate(realImage, 90);
 
                 File sdCard = Environment.getExternalStorageDirectory();
                 File dir = new File(sdCard.getAbsolutePath() + "/volvo");
@@ -162,11 +163,12 @@ public class Preview extends Activity {
 
                 outStream = new FileOutputStream(outFile);
 //                realImage.compress(Bitmap.CompressFormat.JPEG,90,outStream);
-                outStream.write(data[0]);
+//                outStream.write(data[0]);
+                byte[] bytes = getByte(final_bitmap);
+                outStream.write(bytes);
                 outStream.flush();
                 outStream.close();
 
-                Log.d(TAG, "onPictureTaken - wrote bytes: " + data.length + " to " + outFile.getAbsolutePath());
                 path = outFile.getAbsolutePath();
                 refreshGallery(outFile);
 
@@ -192,7 +194,14 @@ public class Preview extends Activity {
         }
     }
 
-    public static Bitmap rotate(Bitmap bitmap, int degree) {
+    public byte[] getByte(Bitmap bitmap){
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
+
+    public Bitmap rotate(Bitmap bitmap, int degree) {
         int w = bitmap.getWidth();
         int h = bitmap.getHeight();
 
