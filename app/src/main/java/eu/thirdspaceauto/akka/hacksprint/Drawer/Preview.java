@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
@@ -34,6 +35,7 @@ import android.widget.Toast;
 
 import eu.thirdspaceauto.akka.hacksprint.R;
 import eu.thirdspaceauto.akka.hacksprint.Utils.CameraPreview;
+import eu.thirdspaceauto.akka.hacksprint.Utils.GIFView;
 
 public class Preview extends Activity {
     private static final String TAG = "PreviewActivity";
@@ -43,6 +45,7 @@ public class Preview extends Activity {
     Activity act;
     Context ctx;
     String component_str= "";
+    GIFView gifView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,10 @@ public class Preview extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         component_str = getIntent().getStringExtra("component");
         setContentView(R.layout.preview);
+
+        gifView = (GIFView) findViewById(R.id.gif_view);
+        gifView.loadGIFResource(this, R.drawable.triple_shoe_1);
+
 
         preview = new CameraPreview(this, (SurfaceView) findViewById(R.id.surfaceView));
         preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));

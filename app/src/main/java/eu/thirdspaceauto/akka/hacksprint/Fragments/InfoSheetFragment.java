@@ -1,5 +1,6 @@
 package eu.thirdspaceauto.akka.hacksprint.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import eu.thirdspaceauto.akka.hacksprint.FinalActivity;
 import eu.thirdspaceauto.akka.hacksprint.MainActivity;
 import eu.thirdspaceauto.akka.hacksprint.R;
 
@@ -112,9 +114,12 @@ public class InfoSheetFragment extends Fragment implements View.OnClickListener{
 				if(tripleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Triple";
 				if(doubleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Double";
 				if(singleTrackTension.isChecked ())parentActivity.inspectionModel.trackTension= "Single";
-				if(parentActivity.currentFragment <=9){
+				if(parentActivity.currentFragment <7){
 					++parentActivity.currentFragment;
 					parentActivity.viewPager.setCurrentItem (parentActivity.currentFragment);
+				}else{
+					Intent intent = new Intent (parentActivity, FinalActivity.class);
+					parentActivity.startActivity (intent);
 				}
 				break;
 		}
