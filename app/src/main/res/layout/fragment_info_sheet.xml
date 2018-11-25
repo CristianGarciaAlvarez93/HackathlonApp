@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Fragments.InfoSheetFragment">
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_8"
-        android:layout_marginRight="@dimen/margin_8"
-        android:layout_marginTop="@dimen/margin_16"
+        android:layout_margin="@dimen/margin_8"
         android:backgroundTint="@android:color/white"
-        android:orientation="vertical"
-        android:padding="@dimen/margin_8">
-        <RelativeLayout
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/basic_text"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_16"
-            android:text="Fill Basic Inspection info"
-            android:textSize="@dimen/margin_16"
+            android:orientation="vertical">
+        <TextView
+            android:textColor="@color/black"
+            android:text="Add basic inspection fields."
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/margin_8"
             android:padding="@dimen/margin_8"
-            android:textStyle="bold" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/basic_text"
-            android:paddingLeft="@dimen/margin_8"
-            android:layout_marginTop="@dimen/margin_8">
-
+            android:layout_height="wrap_content">
             <TableRow>
-
                 <TextView
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="Site/Country:"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/countryText"
                     android:layout_weight="2"
                     android:backgroundTint="@android:color/black"
                     android:hint="Country" />
@@ -57,6 +52,7 @@
                      />
 
                 <EditText
+                    android:id="@+id/serialNumberText"
                     android:layout_weight="2"
                     android:backgroundTint="@android:color/black"
                     android:hint="Serial nº" />
@@ -71,6 +67,7 @@
                      />
 
                 <EditText
+                    android:id="@+id/grConditionText"
                     android:layout_weight="2"
                     android:backgroundTint="@android:color/black"
                     android:hint="Gr.Condition" />
@@ -86,6 +83,7 @@
                      />
 
                 <EditText
+                    android:id="@+id/operationHrsText"
                     android:layout_weight="2"
                     android:backgroundTint="@android:color/black"
                     android:hint="Operation hrs" />
@@ -100,6 +98,7 @@
                      />
 
                 <EditText
+                    android:id="@+id/shoeWidthText"
                     android:layout_weight="2"
                     android:backgroundTint="@android:color/black"
                     android:hint="Shoe width" />
@@ -119,6 +118,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/lowImpactRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -126,6 +126,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/modImpactRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -133,6 +134,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/highImpactRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -155,6 +157,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/lowAbrasiveRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -162,6 +165,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/modAbrasiveRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -169,6 +173,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/highAbrasiveRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -191,6 +196,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/lowMoistureRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -198,6 +204,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/modMoistureRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -205,6 +212,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/highMoistureRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -227,6 +235,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/lowPackingRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -234,6 +243,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/modPackingRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -241,6 +251,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/highPackingRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -262,6 +273,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/tripleShoeRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -269,6 +281,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/doubleShoeRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -276,6 +289,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/singleShoeRadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -297,6 +311,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/tripleTrackTension"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -304,6 +319,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/doubleTrackTension"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -311,6 +327,7 @@
                         android:textColor="@android:color/black" />
 
                     <RadioButton
+                        android:id="@+id/singleTrackTension"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -319,6 +336,6 @@
                 </RadioGroup>
             </TableRow>
         </TableLayout>
-        </RelativeLayout>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </FrameLayout>
