@@ -86,9 +86,15 @@ public class ModelActivity extends AppCompatActivity implements ModelViewAdapter
         allItems = new ArrayList<>();
         Excavators excavators = new Excavators();
         excavators.name = "Volvo EC220E";
-        excavators.info = "";
+        excavators.info = "Crawler excavator";
         excavators.image = R.drawable.excavator;
-        allItems.add(excavators);
+		Excavators excavators2 = new Excavators();
+		excavators2.name = "Volvo EC480D";
+		excavators2.info = "Crawler excavator";
+		excavators2.image = R.drawable.excavator;
+	
+		allItems.add (excavators);
+		allItems.add (excavators2);
         return allItems;
     }
 
