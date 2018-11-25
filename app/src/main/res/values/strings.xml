@@ -19,6 +19,7 @@
 	<string name="subscription_end_date">end date</string>
 	<string name="car_name">Porche 911</string>
 	<string name="point_of_interest">Points of interest</string>
+	<string name="inspection_report_title">Inspection Report</string>
 
 	<string name="in_vehicle">In a vehicle</string>
 	<string name="on_bicycle">On a bicycle</string>
@@ -34,9 +35,6 @@
 	<string name="stop">Stop</string>
 	<string name="help">Help</string>
 	<string name="title_activity_inspection">InspectionActivity</string>
-
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
 
 	<string name="inspection_info">Your inspection has been saved to your local phone as well on the cloud, you will receive the
 		components information from server in some time.

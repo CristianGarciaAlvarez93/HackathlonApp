@@ -56,27 +56,27 @@ public class TopRollerFragment extends Fragment implements View.OnClickListener 
                 break;
         }
     }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
-        if(resultCode==REQUEST_CODE){
-            String path = data.getStringExtra("path");
-            String component = data.getStringExtra("component");
-            showImageFromStorage(path,component);
-        }
-    }
-
-    private void showImageFromStorage(String path,String component) {
-        File imgFile = new  File(path);
-        if(imgFile.exists()){
-            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            if(component.equalsIgnoreCase("left_height")) {
-                left_height_image.setImageBitmap(myBitmap);
-            }else if(component.equalsIgnoreCase("right_height")){
-                right_height_image.setImageBitmap(myBitmap);
-            }
-        }
-    }
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Log.d(TAG,"resultcode TrackLink= "+resultCode + " data= "+data);
+		if(resultCode==REQUEST_CODE){
+			String path = data.getStringExtra("path");
+			String component = data.getStringExtra("component");
+			showImageFromStorage(path,component);
+		}
+	}
+	
+	private void showImageFromStorage(String path,String component) {
+		File imgFile = new  File(path);
+		if(imgFile.exists()){
+			Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+			if(component.equalsIgnoreCase("left_link_pitch")) {
+				left_height_image.setImageBitmap(myBitmap);
+			}else if(component.equalsIgnoreCase("right_link_pitch")){
+				right_height_image.setImageBitmap(myBitmap);
+			}
+		}
+	}
 }
