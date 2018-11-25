@@ -7,6 +7,13 @@
         android:layout_height="match_parent"
         android:background="@color/black">
 
+        <ImageView
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/track_link_height"
+            android:layout_centerHorizontal="true"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

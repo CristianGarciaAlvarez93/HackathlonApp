@@ -19,6 +19,7 @@
             android:layout_toRightOf="@+id/still_img"
             android:padding="@dimen/margin_8"
             android:text="Idler Insepection : "
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size16" />
 
@@ -51,28 +52,87 @@
                     android:text="Idler Height: "
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_size16" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/height_std_max_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/margin_8"
-                    android:paddingTop="@dimen/margin_5"
-                    android:text="Std. max value : "
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size16" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/height_std_min_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/margin_8"
-                    android:paddingTop="@dimen/margin_5"
-                    android:text="Std. repair limit value :"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size16" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Std. max value:"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:text="83mm"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Std. repair limit value:"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:text="75mm"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Measurement LH:"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="LH" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Measurement RH:"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="RH" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/left_height_imageLayout"

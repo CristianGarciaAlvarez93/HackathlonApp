@@ -98,9 +98,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_8"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_border"
                 android:text="Previous"
-                android:textColor="@color/white" />
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/nextButton"
@@ -108,9 +108,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_8"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_border"
                 android:text="Next"
-                android:textColor="@color/white" />
+                android:textColor="@color/colorPrimary" />
         </LinearLayout>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

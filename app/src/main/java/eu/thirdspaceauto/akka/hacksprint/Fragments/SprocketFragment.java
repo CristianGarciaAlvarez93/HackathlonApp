@@ -28,8 +28,8 @@ public class SprocketFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_sprocket, container, false);
-        std_max_value = (TextView) rootView.findViewById(R.id.std_max_value);
-        std_min_value = (TextView) rootView.findViewById(R.id.std_min_value);
+//        std_max_value = (TextView) rootView.findViewById(R.id.std_max_value);
+//        std_min_value = (TextView) rootView.findViewById(R.id.std_min_value);
         left_sprocket_btn= (Button) rootView.findViewById(R.id.left_sprocket_btn);
         right_sprocket_btn= (Button) rootView.findViewById(R.id.right_sprocket_btn);
         left_sprocket_image = (ImageView) rootView.findViewById(R.id.left_sprocket_image);

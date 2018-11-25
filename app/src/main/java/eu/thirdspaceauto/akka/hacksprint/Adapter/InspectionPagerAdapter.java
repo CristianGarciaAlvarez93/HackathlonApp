@@ -36,18 +36,15 @@ public class InspectionPagerAdapter extends FragmentStatePagerAdapter {
 				TripleGrouserShoeFragment shoeGrouserHeightFragment = new TripleGrouserShoeFragment();
 				return shoeGrouserHeightFragment;
 			case 3:
-				DoubleGrouserShoeFragment doubleGrouserShoeFragment = new DoubleGrouserShoeFragment();
-				return doubleGrouserShoeFragment;
-			case 4:
 				BottomRollerFragment bottomRollerFragment = new BottomRollerFragment();
 				return bottomRollerFragment;
-            case 5:
+            case 4:
                 TopRollerFragment topRollerFragment= new TopRollerFragment();
                 return topRollerFragment;
-            case 6:
+            case 5:
                 IdlerFragment idlerFragment= new IdlerFragment();
                 return idlerFragment;
-            case 7:
+            case 6:
                 SprocketFragment sprocketFragment= new SprocketFragment();
                 return sprocketFragment;
             default:

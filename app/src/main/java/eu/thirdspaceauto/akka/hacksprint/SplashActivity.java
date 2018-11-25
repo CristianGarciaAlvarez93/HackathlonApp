@@ -10,6 +10,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 
 import eu.thirdspaceauto.akka.hacksprint.Drawer.ModelActivity;
@@ -34,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
     Activity activity;
     CountDownTimer countDownTimer;
     public static final int RequestPermissionCode = 7;
-
+    ImageView volvo_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +49,12 @@ public class SplashActivity extends AppCompatActivity {
         mainActivityIntent = new Intent(SplashActivity.this, MainActivity.class);
         modelActivityIntent = new Intent(SplashActivity.this, ModelActivity.class);
         loginIntent = new Intent(SplashActivity.this, LoginJourneyActivity.class);
+        volvo_img=(ImageView) findViewById(R.id.volvo_img);
 
-        countDownTimer = new CountDownTimer(1500, 500) {
+        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        volvo_img.startAnimation(fadeInAnimation);
+
+        countDownTimer = new CountDownTimer(2000, 500) {
             @Override
             public void onTick(long millisUntilFinished) {
             }
@@ -71,9 +78,18 @@ public class SplashActivity extends AppCompatActivity {
             //all permission granted
             countDownTimer.start();
         } else {
-            //Calling method to enable permission.
-            checkPermissionIsEnabledOrNot();
+         requestMultiplePermission();
         }
+    }
+
+    private void requestMultiplePermission() {
+        // Creating String Array with Permissions.
+        ActivityCompat.requestPermissions(SplashActivity.this, new String[]{
+                READ_EXTERNAL_STORAGE,
+                WRITE_EXTERNAL_STORAGE,
+                CAMERA
+        }, RequestPermissionCode);
+
     }
 
     @Override
@@ -82,10 +98,9 @@ public class SplashActivity extends AppCompatActivity {
             case RequestPermissionCode:
                 LogUtils.printLog(TAG, " --- permission granted result ---");
                 if (grantResults.length > 0) {
-
-                    boolean readExternalStorage = grantResults[4] == PackageManager.PERMISSION_GRANTED;
-                    boolean writeExternalStorage = grantResults[5] == PackageManager.PERMISSION_GRANTED;
-                    boolean cameraPermission = grantResults[6] == PackageManager.PERMISSION_GRANTED;
+                    boolean readExternalStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean writeExternalStorage = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    boolean cameraPermission = grantResults[2] == PackageManager.PERMISSION_GRANTED;
                     if (readExternalStorage &&
                             writeExternalStorage && cameraPermission) {
                         LogUtils.printLog(TAG, "Permission Granted");
